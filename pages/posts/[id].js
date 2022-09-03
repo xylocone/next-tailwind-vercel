@@ -1,5 +1,14 @@
+import { motion } from "framer-motion";
+
 export default function Post({ content }) {
-  return <p dangerouslySetInnerHTML={{ __html: content }}></p>;
+  return (
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      dangerouslySetInnerHTML={{ __html: content }}
+    ></motion.p>
+  );
 }
 
 export async function getStaticProps({ params }) {
